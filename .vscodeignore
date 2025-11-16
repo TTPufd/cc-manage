@@ -8,3 +8,13 @@ src/**
 node_modules/**
 README.md
 CHANGELOG.md
+playwright-report/**
+test-results/**
+.claude/**
+CLAUDE.md
+.playwright-mcp/**
+media/sidebar/test.html
+out/test/**
+tsconfig.json
+.eslintignore
+vsc-extension-quickstart.md
