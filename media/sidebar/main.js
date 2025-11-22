@@ -64,10 +64,6 @@
       state.refreshing = false
       renderConfigs()
       updateLoadingUI()
-      // 配置数据更新后，重新启动自动刷新（确保有配置时定时器运行）
-      if (state.isVisible) {
-        startAutoRefresh()
-      }
     }
 
     if (type === 'templates') {
@@ -179,7 +175,7 @@
     state.refreshing = true
     updateLoadingUI()
     vscode.postMessage({ type: 'refreshAll' })
-    showToast(source === 'manual' ? '正在刷新配置…' : '自动刷新中…')
+    showToast(source === 'manual' ? '正在刷新配置…' : '刷新中…')
   }
 
   function handleVisibilityChange(visible) {
@@ -188,24 +184,9 @@
     if (visible) {
       // 面板变为可见时，立即刷新一次并启动定时器
       tryRequestRefresh('visibility')
-      startAutoRefresh()
     } else {
       // 面板隐藏时，停止定时器
       stopAutoRefresh()
-    }
-  }
-
-  function startAutoRefresh() {
-    // 先清除已有的定时器
-    stopAutoRefresh()
-
-    // 只有在有配置时才启动定时刷新
-    if (state.configs.length > 0) {
-      state.autoRefreshTimer = setInterval(() => {
-        if (state.isVisible) {
-          tryRequestRefresh('auto')
-        }
-      }, AUTO_REFRESH_INTERVAL)
     }
   }
 
@@ -895,7 +876,7 @@ requires_openai_auth = true`
         toolbarStatus.textContent = '正在刷新余额状态...'
         toolbarStatus.classList.add('success')
       } else {
-        toolbarStatus.textContent = '5 分钟自动刷新，可随时手动更新'
+        toolbarStatus.textContent = ''
         // 默认样式，不添加额外类
       }
     }
@@ -1138,9 +1119,4 @@ requires_openai_auth = true`
   vscode.postMessage({ type: 'ready' })
   // 请求模板列表
   vscode.postMessage({ type: 'getTemplates' })
-
-  // 初始启动自动刷新（会在收到配置数据后真正启动）
-  // 注意：startAutoRefresh 会在 configs 为空时不启动，所以这里先调用一次
-  // 实际的定时器会在收到 state 消息后，configs 有数据时启动
-  startAutoRefresh()
 })()
